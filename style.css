@@ -1,0 +1,546 @@
+
+.columna {
+  width: 30%;
+  float: left; 
+}
+
+
+@media (max-width: 600px) {
+
+  .columna {
+    width: 100%; 
+    float: none; 
+  }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f1e6; /* Crema suave */
+    color: #2a2e1e; 
+    scroll-behavior: smooth; 
+}
+
+
+.encabezado {
+    background: #3d472b; /* Verde oliva oscuro */
+    color: #f4f1e6;
+    padding: 45px 20px;
+    text-align: center;
+    border-bottom: 5px solid #556238;
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    margin-top: 6px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+
+
+/* Contenedor  */
+.gran-contenedor {
+    display: flex;
+    flex-direction: row; /*  Menú der */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Columna Izquierda */
+.contenido-principal {
+    flex: 3; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacio entre las tarjetas de contenido */
+    min-width: 0;
+}
+
+/* Columna Derecha (Barra MENU) */
+.barra-lateral-derecha {
+    /* Fondo  */
+    background: #fafbf6; 
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-top: 5px solid #a8b072;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+/* Ajuste para móviles  */
+@media (max-width: 850px) {
+    .gran-contenedor {
+        flex-direction: column;
+    }
+    .barra-lateral-derecha {
+        position: static;
+        width: 100%;
+        order: -1;
+    }
+}
+
+.tarjeta-completa {
+    /* Fondo a verde claro */
+    background: #fafbf6; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+/* 
+   ESTILOS DE TÍTULOS Y TEXTO
+/* Títulos principales de tarjeta (H1) */
+.tarjeta-completa h1 {
+    color: #3d472b; 
+    font-size: 2.4em;
+    border-bottom: 3px solid #a8b072;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Subtítulos principales  (H2) */
+.tarjeta-completa h2 {
+    color: #556238; /* Verde medio */
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Subtítulos  (H3) */
+.tarjeta-completa h3 {
+    color: #556238; /* Verde medio */
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
+.tarjeta-completa p {
+    line-height: 1.7;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #444; 
+}
+
+/* Imágenes  */
+.tarjeta-completa img, .tarjeta-completa picture img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Scroll  */
+section[id] {
+    scroll-margin-top: 40px;
+}
+
+
+/*
+   ESTILOS  PARA PREMIOS NOBEL
+  */
+
+/* Estilo para las secciones individuales de cada Nobel (Biografías) */
+section[id^="devoret"], section[id^="martinis"], section[id^="clarke"],
+section[id^="yaghi"], section[id^="kitagawa"], section[id^="robson"],
+section[id^="brunkow"], section[id^="ramsdell"], section[id^="sakaguchi"] {
+ /*  Fondo verde medio claro */
+ background-color: #e8eec2; 
+ border: 1px solid #a8b072; 
+ border-radius: 15px;
+ padding: 30px;
+ margin-bottom: 40px;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section[id$="premio"] {
+ background: #556238;
+ color: #ffffff;
+ padding: 30px;
+ border-radius: 10px;
+ margin-bottom: 40px;
+border-left: 8px solid #a8b072;
+}
+
+section[id$="premio"] h2 {
+    color: #ffffff; 
+    font-size: 2em;
+    border-bottom: 2px solid #a8b072; 
+    padding-bottom: 12px;
+    margin-top: 0;
+}
+
+section[id$="premio"] p {
+    color: #f4f1e6;
+    font-size: 1.1em;
+}
+
+.noticias section h2 {
+    color: #556238; 
+    font-size: 1.9em;
+    margin-bottom: 10px;
+    border-bottom: 2px dotted #a8b072;
+    padding-bottom: 5px;
+}
+
+.noticias section h3 {
+    color: #556238; 
+    text-transform: uppercase;
+}
+
+/* 
+   SOPA DE LETRAS (SECCIÓN DE JUEGO)
+  */
+.game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.word-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.word-list span {
+    background-color: #e9ecef;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #3d472b;
+    border: 1px solid #ced4da;
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    max-width: 500px; 
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 20px 0; 
+    border: 5px solid #3d472b;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #3d472b;
+    gap: 2px;
+}
+
+.grid-cell {
+    background-color: #fafbf6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s;
+}
+
+
+.grid-cell.highlighted {
+    background-color: #556238;
+    color: #ffffff;
+}
+
+.grid-cell:hover {
+    background-color: #f0f4c3;
+}
+
+/* 
+   SECCIÓN DE ANUNCIO (AD SECTION)
+  */
+.ad-section {
+    background: linear-gradient(135deg, #3d472b, #2a2e1e);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(61, 71, 43, 0.4);
+    text-align: center;
+    border: 2px solid #a8b072;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.ad-content h2 {
+    font-size: 2.2em;
+    color: #a8b072;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.ad-slogan {
+    font-style: italic;
+    font-size: 1.3em;
+    color: #f4f1e6;
+    margin-bottom: 30px;
+}
+
+.ad-button {
+    background-color: #a8b072;
+    color: #2a2e1e;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(168, 176, 114, 0.4);
+}
+
+.ad-button:hover {
+    background-color: #f4f1e6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* 
+   ESTILOS DEL MENÚ LATERAL (BARRA DERECHA)
+*/
+.barra-lateral-derecha h2 {
+    color: #3d472b;
+    border-bottom: 2px solid #a8b072;
+    margin-top: 0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.barra-lateral-derecha ul {
+    list-style: none;
+    padding: 0;
+}
+
+.barra-lateral-derecha li {
+    margin-bottom: 0;
+}
+
+.barra-lateral-derecha a {
+    text-decoration: none;
+    color: #556238;
+    font-weight: 600;
+    display: block;
+    padding: 8px 10px;
+    transition: all 0.2s;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.barra-lateral-derecha a:hover {
+    color: #2a2e1e;
+    background-color: #f0f4c3;
+    padding-left: 12px;
+}
+
+/* Desplegables */
+.barra-lateral-derecha details summary {
+    cursor: pointer;
+    color: #3d472b;
+    font-weight: 700;
+    padding: 8px 10px;
+    list-style: none;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.barra-lateral-derecha details summary:hover {
+    background-color: #f0f4c3;
+}
+
+/* SubmenU */
+.submenu {
+    margin-left: 0;
+    border-left: 3px solid #a8b072;
+    padding-left: 15px !important;
+    background: #fcfdfe;
+    border-radius: 0 8px 8px 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.submenu a {
+    font-weight: normal;
+    color: #444;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.categoria-menu {
+    color: #556238;
+    font-weight: 800;
+    font-size: 0.9em;
+    padding: 5px 10px 5px 10px;
+}
+
+/*
+   PIE DE PÁGINA (FOOTER)
+   */
+footer {
+    background: #2f361f;
+    color: #e8e5d8;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 14px;
+    border-top: 5px solid #a8b072;
+}
+
+
+#devoret picture, #martinis picture, #clarke picture,
+#yaghi picture, #kitagawa picture, #robson picture,
+#brunkow picture, #ramsdell picture, #sakaguchi picture,
+#devoret img, #martinis img, #clarke img,
+#yaghi img, #kitagawa img, #robson img,
+#brunkow img, #ramsdell img, #sakaguchi img {
+    
+    float: none;
+    
+    display: block;
+    
+    margin: 0 auto 15px auto; 
+    
+    max-width: 250px; 
+    height: auto;
+}
+
+#devoret h2, #martinis h2, #clarke h2,
+#yaghi h2, #kitagawa h2, #robson h2,
+#brunkow h2, #ramsdell h2, #sakaguchi h2,
+#devoret h3, #martinis h3, #clarke h3,
+#yaghi h3, #kitagawa h3, #robson h3,
+#brunkow h3, #ramsdell h3, #sakaguchi h3 {
+    
+     text-align: center; 
+}
+
+
+header {
+    padding: 1.5rem;
+    color: #eaffe7;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #124916;
+    border-bottom: 4px solid #167a13c9;
+}
+
+header p {
+    color: #e6fde3;
+    text-align: center;
+}
+
+/*Línea separadora horizontal*/
+hr {
+    border: none;
+    border-top: 2px solid #222e1ec9;
+    margin: 1.5rem 0;
+}
+
+/*Bordes laterales para títulos*/
+h3 {
+    background: #0a4109de;
+    border-left: 3px solid #051a01;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    color: #d9ffd4;
+}
+
+h2{
+    color: #144e0d;    
+}
+
+/* Estilo general para imágenes */
+img {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img.right {
+    float: right;
+    max-width: 210px;
+    margin: 0 0 1rem 1rem;
+}
+
+img.left {
+    float: left;
+    max-width: 200px;
+    margin: 0 1rem 1rem 0;
+}
+
+img.electro {
+    float: left;
+    max-width: 300px;
+    margin: 0 1rem 1rem 0;
+}
+
+img.ito {
+    float: left;
+    max-width: 250px;
+    height: 250px;
+    margin: 0 1rem 1rem 0;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+img {
+    border: 3px solid #364e08; 
+    border-radius: 8px;       
+}
+
+
+/*Texto*/
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000000;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+dt {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+/*Artículos*/
+article {
+    background-color: #488843a2;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-left: 4px solid #1e2e1e;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
